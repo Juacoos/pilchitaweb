@@ -6,10 +6,7 @@
 html{
     scroll-behavior: smooth;
 }
-/*
-div{
-    display: inline-block;
-}*/
+
 ul{
     display: inline-block;
     list-style-type: none;
@@ -30,7 +27,8 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #FCA311;
+    background: rgb(252,163,17);
+    background: linear-gradient(180deg, rgba(252,163,17,1) 0%, rgba(231,150,15,0.9023984593837535) 100%);
 }
 
 .header__logo{
@@ -41,12 +39,12 @@ header{
     margin: 12px 12px;
     color: black;
     text-decoration: none;
+    
 }
 
 .header__paginas:hover{
     color: white;
     transition:0.2s;
-
 }
 
 
@@ -84,13 +82,15 @@ div.principal__contenedorboton{
     font-size: 20px;
     text-align: center;
     padding: 5px 10px;
-    background-color: #FCA311;
+    background: rgb(252,163,17);
+    background: linear-gradient(180deg, rgba(252,163,17,1) 0%, rgba(231,150,15,0.9023984593837535) 100%);
     border: 1px solid #FCA311 ;
     border-radius: 5px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0,0.5);
 }
 .principal__boton:hover{
-    background-color: #14213d;
+    background: rgb(20,33,61);
+    background: linear-gradient(180deg, rgba(20,33,61,1) 0%, rgba(11,21,42,1) 100%);
     border: 1px solid #14213d;
     color: #FCA311;
     transition:0.2s;
