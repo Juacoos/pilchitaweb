@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="a.css">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- CSS PROPIO -->
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,17 +48,8 @@
                 </div>
             </div>
         </section>
-        <!--
-        <section id="nosotros">
-            <div>
-                <h2>En PILCHITA hacemos tu ropa para que tengas toda la fachita</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo amet architecto quia, nam molestiae repudiandae hic quo exercitationem autem iusto, voluptatum fuga? Exercitationem quibusdam mollitia tempora ut molestias deserunt.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id reprehenderit reiciendis explicabo magni voluptatum mollitia itaque rem hic nulla aliquam neque blanditiis similique, eaque ipsum cum labore corrupti sunt sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur dignissimos exercitationem dolores sequi distinctio esse incidunt velit eius porro eaque itaque iusto illum, harum temporibus, nobis, ipsa consequatur. Veniam, natus?</p>
-            </div>
-        </section>
-        -->
 
-        <section id="nosotros" class="secundaria">
+        <!-- <section id="nosotros" class="secundaria">
             <div class="secundaria__contenedor">
                 <img src="../recursos/ropita.jpg" alt="hombre con outfit" class="secundaria__imagen">
             </div>
@@ -65,20 +59,37 @@
                 <p class="secundaria__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quasi voluptatem cupiditate et temporibus exercitationem dolor reiciendis vitae velit, aspernatur laboriosam possimus. Asperiores dolor provident totam voluptatum nostrum magnam perferendis.</p>
                 <p class="secundaria__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sequi, quidem sit natus itaque porro, est iusto modi commodi impedit aut officiis delectus sed, ad neque temporibus eos repellat explicabo?</p>
             </div>
+        </section> -->
+        <section id="nosotros" class="secundaria container-fluid d-flex align-items-center justify-content-center p-2">
+            <div class="row">
+                <div class="col-12 col-lg-4 row">
+                    <img src="../recursos/ropita.jpg" alt="hombre con outfit" class="secundaria__imagen col-12">
+                </div>
+
+                <div class="col-12 col-lg-8 pt-3 pt-lg-0 px-lg-3">
+                    <h2 class="secundaria__titulo">En PILCHITA hacemos tu ropa para que tengas toda la fachita</h2>
+                    <p class="secundaria__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quasi voluptatem cupiditate et temporibus exercitationem dolor reiciendis vitae velit, aspernatur laboriosam possimus. Asperiores dolor provident totam voluptatum nostrum magnam perferendis.</p>
+                    <p class="secundaria__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sequi, quidem sit natus itaque porro, est iusto modi commodi impedit aut officiis delectus sed, ad neque temporibus eos repellat explicabo?</p>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
         <div class="footer__contenedor">
-            <p>© Pilchita</p>
+            <p class="footer__parrafo">© Pilchita</p>
         </div>
-        <div class="footer__contenedor--redes">
-            <p class="footer__parrafo">
-                Seguinos y comunicate con nosotros en nuestras redes!
-            </p>
-            <a href="#"><img src="../recursos/fb.png" alt="logo facebook" class="footer__logo"></a>
-            <a href="#"><img src="../recursos/insta.png" alt="logo instagram" class="footer__logo"></a>
-            <a href="#"><img src="../recursos/wp.png" alt="logo whatsapp" class="footer__logo"></a>
+        <div class="footer__contenedor">
+            <div class="footer__contenedor--parrafo">
+                <p class="footer__parrafo footer__parrafo_none">Seguinos y comunicate con nosotros en nuestras redes!</p>
+            </div>
+            <div class="footer__contenedor--redes">
+                <a href="#"><img src="../recursos/fb.png" alt="logo facebook" class="footer__logo"></a>
+                <a href="#"><img src="../recursos/insta.png" alt="logo instagram" class="footer__logo"></a>
+                <a href="#"><img src="../recursos/wp.png" alt="logo whatsapp" class="footer__logo"></a>
+            </div>
         </div>
     </footer>
+    <!-- SCRIPT BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

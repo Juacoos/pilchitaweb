@@ -9,6 +9,8 @@ html{
 
 ul{
     display: inline-block;
+    margin-bottom: 0;
+    padding-left: 0;
     list-style-type: none;
     
 }
@@ -119,31 +121,47 @@ div.principal__contenedorboton{
 .secundaria__texto{
     display: inline;
 }
+/* le saco el margin para que tenga mas espacio la imagen con el texto
+en la imagen de la seccion de abajo en index (Bootstrap) */
+.row{
+    margin-right: 0;
+    margin-left: 0;
+}
+/* Le cambio este padding porque quedaba un espacio en
+la imagen de la section de abajo en index (Bootstrap) */
+.row>*{
+    padding-right: 0;
+    padding-left: 0;
+}
 
 
 /*  FOOTER  */
+
 footer{
     display: flex;
     justify-content: space-between;
+    padding: 0.5rem;
     background-color: #E5E5E5;
 }
+
 .footer__contenedor{
-    display: inline-block;
-}
-.footer__contenedor--redes{
-    display: inline-block;
-    
-    right: 12px;
+    display: flex;
 }
 .footer__parrafo{
-    display: inline;
-    text-align: right;
+    margin-bottom: 0;
 }
+
 .footer__logo{
     height: 20px;
+    margin: 0 0.5rem;
 }
-
-
+.footer__link{
+    text-decoration: none;
+    color: black;
+}
+.footer__link:hover{
+    color: #14213d;
+}
 /* Pagina PRODUCTOS */
 
 /* se cambia imagen de fondo principal y tamaño*/
@@ -208,7 +226,7 @@ footer{
     background-position: center center;
     background-size: cover;
     padding: 6px 0;
-    
+    margin-bottom: 0;
 }
 
 .imgproducto{
@@ -432,15 +450,16 @@ textarea{
     .footer__contenedor--redes{
         position: static;
     }
-    .footer__parrafo{
+
+    .footer__parrafo_none{
         display: none;
-        /*font-size: 3vw;*/
     }
+
     .footer__logo{
-        margin-left: 5px;
-        margin-right: 5px;
+        margin: 0 0.5rem;
         width: auto;
     }
+
 
     /* productos */
     .productos{
@@ -454,5 +473,13 @@ textarea{
     /* informacion */
     .formulario__form{
         width: auto;
+    }
+}
+@media (max-width:451px){
+    .footer__parrafo{
+        font-size: 3vw;
+    }
+    .footer__link{
+        font-size: 2vw;
     }
 }
