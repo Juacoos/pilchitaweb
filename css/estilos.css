@@ -1,485 +1,400 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
-html{
-    scroll-behavior: smooth;
-}
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif; }
 
-ul{
-    display: inline-block;
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style-type: none;
-    
-}
-li{
-    display: inline-block;
-}
+html {
+  scroll-behavior: smooth; }
+
+ul {
+  display: inline-block;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none; }
+
+li {
+  display: inline-block; }
 
 /*  HEADER  */
+header {
+  position: sticky;
+  top: 0; }
 
-header{
-    position: sticky;
-    top: 0;
-}
-.header__navegacion{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background: rgb(252,163,17);
-    background: linear-gradient(180deg, rgba(252,163,17,1) 0%, rgba(231,150,15,0.9023984593837535) 100%);
-}
+.header__navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #fca311;
+  background: linear-gradient(180deg, #fca311 0%, rgba(231, 150, 15, 0.902398) 100%); }
 
-.header__logo{
-    height: 50px;
+.header__logo {
+  height: 50px; }
 
-}
-.header__paginas{
-    margin: 12px 12px;
-    color: black;
-    text-decoration: none;
-    
-}
+.header__paginas {
+  margin: 12px 12px;
+  color: black;
+  text-decoration: none; }
 
-.header__paginas:hover{
-    color: white;
-    transition:0.2s;
-}
-
+.header__paginas:hover {
+  color: white;
+  transition: 0.2s; }
 
 /*  MAIN  */
-.principal__contenedor{
-    display: inline-block;
-    width: 100%;
-    height: 700px;
-    background-image:linear-gradient(
-        0deg,
-        rgba(250,250,250,0.5),
-        rgba(250,250,250,0.7)
-        )
-        , url(../recursos/streetwear-2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
+.principal__contenedor {
+  display: inline-block;
+  width: 100%;
+  height: 700px;
+  background-image: linear-gradient(0deg, rgba(250, 250, 250, 0.5), rgba(250, 250, 250, 0.7)), url(../recursos/streetwear-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+/*
 div.principal__contenedorlogo{
     text-align: center;
 }
-
 .principal__logo{
     text-align: center;
 }
 div.principal__contenedorboton{
     text-align: center;
 }
-
-
 .principal__titulo{
     text-align: center;
 }
-.principal__boton{
-    font-size: 20px;
-    text-align: center;
-    padding: 5px 10px;
-    background: rgb(252,163,17);
-    background: linear-gradient(180deg, rgba(252,163,17,1) 0%, rgba(231,150,15,0.9023984593837535) 100%);
-    border: 1px solid #FCA311 ;
-    border-radius: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0,0.5);
-}
-.principal__boton:hover{
-    background: rgb(20,33,61);
-    background: linear-gradient(180deg, rgba(20,33,61,1) 0%, rgba(11,21,42,1) 100%);
-    border: 1px solid #14213d;
-    color: #FCA311;
-    transition:0.2s;
-    cursor: pointer;
-}
+*/
+.principal__centrar--centrartodo {
+  text-align: center; }
 
+.principal__boton {
+  font-size: 20px;
+  text-align: center;
+  padding: 5px 10px;
+  background: #fca311;
+  background: linear-gradient(180deg, #fca311 0%, rgba(231, 150, 15, 0.902398) 100%);
+  border: 1px solid #FCA311;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5); }
 
-.secundaria{
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
-}
-.secundaria__contenedor{
-    display: inline-block;
-    margin: 10px;
-    vertical-align: top;
-    max-width: 50%;
-    text-align: center;
-}
+.principal__boton:hover {
+  background: #14213d;
+  background: linear-gradient(180deg, #14213d 0%, #0b152a 100%);
+  border: 1px solid #14213d;
+  color: #FCA311;
+  transition: 0.2s;
+  cursor: pointer; }
 
-.secundaria__imagen{
-    display: inline-block;
-    width: 400px;
-    
-}
+.secundaria {
+  background: white;
+  background: linear-gradient(180deg, white 0%, #e5e5e5 100%); }
 
-.secundaria__texto{
-    display: inline;
-}
+.secundaria__contenedor {
+  display: inline-block;
+  margin: 10px;
+  vertical-align: top;
+  max-width: 50%;
+  text-align: center; }
+
+.secundaria__imagen {
+  display: inline-block;
+  width: 400px; }
+
+.secundaria__texto {
+  display: inline; }
+
 /* le saco el margin para que tenga mas espacio la imagen con el texto
 en la imagen de la seccion de abajo en index (Bootstrap) */
-.row{
-    margin-right: 0;
-    margin-left: 0;
-}
+.row {
+  margin-right: 0;
+  margin-left: 0; }
+
 /* Le cambio este padding porque quedaba un espacio en
 la imagen de la section de abajo en index (Bootstrap) */
-.row>*{
-    padding-right: 0;
-    padding-left: 0;
-}
-
+.row > * {
+  padding-right: 0;
+  padding-left: 0; }
 
 /*  FOOTER  */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: #E5E5E5; }
 
-footer{
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-    background-color: #E5E5E5;
-}
+.footer__contenedor {
+  display: flex; }
 
-.footer__contenedor{
-    display: flex;
-}
-.footer__parrafo{
-    margin-bottom: 0;
-}
+.footer__parrafo {
+  margin-bottom: 0; }
 
-.footer__logo{
-    height: 20px;
-    margin: 0 0.5rem;
-}
-.footer__link{
-    text-decoration: none;
-    color: black;
-}
-.footer__link:hover{
-    color: #14213d;
-}
+.footer__logo {
+  height: 20px;
+  margin: 0 0.5rem; }
+
+.footer__link {
+  text-decoration: none;
+  color: black; }
+
+.footer__link:hover {
+  color: #14213d; }
+
 /* Pagina PRODUCTOS */
-
 /* se cambia imagen de fondo principal y tamaño*/
+.principal__contenedorproductos {
+  display: inline-block;
+  width: 100%;
+  height: 400px;
+  background-image: url(../recursos/ropa.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
-.principal__contenedorproductos{
-    display: inline-block;
-    width: 100%;
-    height: 400px;
-    background-image: url(../recursos/ropa.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
+.principal__logo--internas {
+  height: 200px;
+  text-align: center; }
 
-.principal__logo--internas{
-    height: 200px;
-    text-align: center;
-}
 /* se cambia imagen de fondo principal y tamaño */
-
-.productos{
-    /*
+.productos {
+  /*
     display: flex;
     flex-flow: row wrap;
     justify-content: center;*/
+  width: 100%;
+  margin: auto;
+  background-color: #E5E5E5; }
 
+.productos__grid {
+  display: grid;
+  grid-template-areas: 'prod__uno prod__dos prod__tres' 'prod__cuatro prod__cinco prod__seis';
+  justify-content: center; }
 
-    width: 100%;
-    margin: auto;
-    background-color: #E5E5E5;
-}
+.prod {
+  /*display: inline-block;*/
+  /*width: 25%;*/
+  margin: 12px;
+  background-color: white;
+  text-align: center;
+  border: 1px solid #E5E5E5;
+  border-radius: 5px;
+  /* "overflow: hidden;" para que se vea el border radius en la parte superior */
+  overflow: hidden;
+  box-sizing: border-box; }
 
-.productos__grid{
-    display: grid;
-    grid-template-areas: 'prod__uno prod__dos prod__tres'
-                        'prod__cuatro prod__cinco prod__seis';
-    justify-content: center;
-}
+.prod__uno {
+  grid-area: prod__uno; }
 
-.prod{
-    /*display: inline-block;*/
-    /*width: 25%;*/
-    margin: 12px;
-    background-color: white;
-    text-align: center;
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
+.prod__dos {
+  grid-area: prod__dos; }
 
-    /* "overflow: hidden;" para que se vea el border radius en la parte superior */
-    overflow: hidden;
-    box-sizing: border-box;
-}
-.prod__uno{grid-area: prod__uno;}
-.prod__dos{grid-area: prod__dos;}
-.prod__tres{grid-area: prod__tres;}
-.prod__cuatro{grid-area: prod__cuatro;}
-.prod__cinco{grid-area: prod__cinco;}
-.prod__seis{grid-area: prod__seis;}
+.prod__tres {
+  grid-area: prod__tres; }
 
-.prod__titulo{
-    background-color: #FCA311;
-    background-position: center center;
-    background-size: cover;
-    padding: 6px 0;
-    margin-bottom: 0;
-}
+.prod__cuatro {
+  grid-area: prod__cuatro; }
 
-.imgproducto{
-    width: 100%;
-    height: 400px;
-}
+.prod__cinco {
+  grid-area: prod__cinco; }
 
-.btn{
-    font-size: 12px;
-    text-align: center;
-    padding: 5px 10px;
-    margin: 10px 10px;
-    background-color: #FCA311;
-    border: 1px solid #FCA311 ;
-    border-radius: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0,0.5);
-}
+.prod__seis {
+  grid-area: prod__seis; }
 
-.btn:hover{
-    color: #FCA311;
-    background-color: #14213d;
-    border: 1px solid #14213d;
-    transition:0.2s;
-    cursor: pointer;
-}
+.prod__titulo {
+  background-color: #FCA311;
+  background-position: center center;
+  background-size: cover;
+  padding: 6px 0;
+  margin-bottom: 0; }
 
+.imgproducto {
+  width: 100%;
+  height: 400px; }
+
+.btn {
+  font-size: 12px;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 10px 10px;
+  background-color: #FCA311;
+  border: 1px solid #FCA311;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5); }
+
+.btn:hover {
+  color: #FCA311;
+  background-color: #14213d;
+  border: 1px solid #14213d;
+  transition: 0.2s;
+  cursor: pointer; }
 
 /* SOBRE NOSOTROS */
-.principal__contenedornosotros{
-    display: inline-block;
-    width: 100%;
-    height: 400px;
-    background-image:linear-gradient(
-        0deg,
-        rgba(222,222,222,0.5),
-        rgba(222,222,222,0.5)
-        )
-        , url(../recursos/ropita.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
+.principal__contenedornosotros {
+  display: inline-block;
+  width: 100%;
+  height: 400px;
+  background-image: linear-gradient(0deg, rgba(222, 222, 222, 0.5), rgba(222, 222, 222, 0.5)), url(../recursos/ropita.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 /* INFORMACION*/
-.principal__contenedorinfo{
-    display: inline-block;
-    width: 100%;
-    height: 400px;
-    background-image: linear-gradient(
-        0deg,
-        rgba(222,222,222,0.5),
-        rgba(222,222,222,0.5)
-        )
-        , url(../recursos/fondo-info.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
+.principal__contenedorinfo {
+  display: inline-block;
+  width: 100%;
+  height: 400px;
+  background-image: linear-gradient(0deg, rgba(222, 222, 222, 0.5), rgba(222, 222, 222, 0.5)), url(../recursos/fondo-info.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
-.info__grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: 'img__info texto__info texto__info'
-                        'texto__ubi texto__ubi ubicacion'
-                        'img__envios texto__envios texto__envios'
-}
-.img__info{
-    grid-area: img__info;
-    
-    background-image: 
-        url("../recursos/fondo-info.jpg");
-    background-size: cover;
-    background-position: center center;
-    width: 400px;
-    height: 300px;
-}
+.info__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 'img__info texto__info texto__info' 'texto__ubi texto__ubi ubicacion' 'img__envios texto__envios texto__envios'; }
 
-.texto__info{
-    grid-area: texto__info;
-    
-}
+.img__info {
+  grid-area: img__info;
+  background-image: url("../recursos/fondo-info.jpg");
+  background-size: cover;
+  background-position: center center;
+  width: 400px;
+  height: 300px; }
 
-.texto__ubi{
-    grid-area: texto__ubi;
-}
-.ubicacion{
-    grid-area: ubicacion;
-}
-.img__envios{
-    grid-area: img__envios;
-}
-.texto__envios{
-    grid-area: texto__envios;
-}
+.texto__info {
+  grid-area: texto__info; }
 
+.texto__ubi {
+  grid-area: texto__ubi; }
 
-.img__envios{
-    background-image: 
-        url("../recursos/envios.jpg");
-    background-size: cover;
-    background-position: center center;
-    width: 400px;
-    height: 300px;
-}
+.ubicacion {
+  grid-area: ubicacion; }
 
+.img__envios {
+  grid-area: img__envios; }
 
-.margin__grid{
-    margin: 12px;
-}
+.texto__envios {
+  grid-area: texto__envios; }
 
+.img__envios {
+  background-image: url("../recursos/envios.jpg");
+  background-size: cover;
+  background-position: center center;
+  width: 400px;
+  height: 300px; }
+
+.margin__grid {
+  margin: 12px; }
 
 /* CONTACTO */
-.principal__contenedorcontacto{
-    display: inline-block;
-    width: 100%;
-    height: 400px;
-    background-image:linear-gradient(
-        0deg,
-        rgba(250,250,250,0.3),
-        rgba(250,250,250,0.3)
-        )
-        , url(../recursos/ropa-contacto.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-.formulario{
-    background-color: #E5E5E5;
-    background-size: 100vw 100vh;
-    padding: 12px;
-    margin: 0;
-}
-.formulario__form{
-    width: 400px;
-    margin: auto;
-    background-color: white;
+.principal__contenedorcontacto {
+  display: inline-block;
+  width: 100%;
+  height: 400px;
+  background-image: linear-gradient(0deg, rgba(250, 250, 250, 0.3), rgba(250, 250, 250, 0.3)), url(../recursos/ropa-contacto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.formulario {
+  background-color: #E5E5E5;
+  background-size: 100vw 100vh;
+  padding: 12px;
+  margin: 0; }
+
+.formulario__form {
+  width: 400px;
+  margin: auto;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 5px; }
+
+.formulario__texto {
+  text-align: center; }
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #E5E5E5;
+  border: 1px solid #E5E5E5;
+  border-radius: 5px; }
+
+textarea {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  max-height: 100px; }
+
+.formulario__btn {
+  background-color: #FCA311;
+  border: 1px solid #FCA311; }
+
+.formulario__btn:hover {
+  color: #FCA311;
+  background-color: #14213d;
+  border: 1px solid #14213d;
+  transition: 0.2s;
+  cursor: pointer; }
+
+@media (max-width: 1024px) {
+  /* index */
+  /* HEADER */
+  header {
+    position: static; }
+  .header__contenedorpaginas {
+    width: 100%; }
+  .header__navegacion {
+    flex-direction: column; }
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  /* MAIN */
+  .principal {
+    width: 100%; }
+  .secundaria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding-bottom: 20px; }
+  .secundaria__contenedor {
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+    max-width: 100%; }
+  .secundaria__imagen {
     box-sizing: border-box;
-    padding: 12px;
-    border-radius: 5px;
-}
+    width: 100%; }
+  /* FOOTER */
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1rem; }
+  .footer__contenedor--redes {
+    position: static; }
+  .footer__parrafo_none {
+    display: none; }
+  .footer__logo {
+    margin: 0 0.5rem;
+    width: auto; }
+  /* productos */
+  .productos {
+    display: flex;
+    flex-direction: column; }
+  .prod {
+    width: auto; }
+  /* informacion */
+  .formulario__form {
+    width: auto; } }
 
-.formulario__texto{
-    text-align: center;
-}
-input,textarea{
-    width: 100%;
-    margin-bottom: 12px;
-    padding: 5px;
-    box-sizing: border-box;
-    background-color: #E5E5E5;
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
-}
-textarea{
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 100px;
-    max-height: 100px;
-}
-.formulario__btn{
-    background-color: #FCA311;
-    border: 1px solid #FCA311 ;
-}
-.formulario__btn:hover{
-    color: #FCA311;
-    background-color: #14213d;
-    border: 1px solid #14213d;
-    transition:0.2s;
-    cursor: pointer;
-}
-
-
-
-
-@media (max-width:1024px){
-    /* index */
-    /* HEADER */
-    header{
-        position: static;
-    }
-    .header__contenedorpaginas{
-        width: 100%;
-    }
-    .header__navegacion{
-        flex-direction: column;
-    }
-    ul{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    /* MAIN */
-    .principal{
-        width: 100%;
-    }
-    .secundaria{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding-bottom: 20px;
-    }
-    .secundaria__contenedor{
-        display: flex;
-        flex-direction: column;
-        margin: 12px;
-        max-width: 100%;
-    }
-    .secundaria__imagen{
-        box-sizing: border-box;
-        width: 100%;
-    }
-    /* FOOTER */
-    footer{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-size: 1rem;
-    }
-    .footer__contenedor--redes{
-        position: static;
-    }
-
-    .footer__parrafo_none{
-        display: none;
-    }
-
-    .footer__logo{
-        margin: 0 0.5rem;
-        width: auto;
-    }
-
-
-    /* productos */
-    .productos{
-        display: flex;
-        flex-direction: column;
-    }
-    .prod{
-        width: auto;
-    }
-
-    /* informacion */
-    .formulario__form{
-        width: auto;
-    }
-}
-@media (max-width:451px){
-    .footer__parrafo{
-        font-size: 3vw;
-    }
-    .footer__link{
-        font-size: 2vw;
-    }
-}
+@media (max-width: 451px) {
+  .footer__parrafo {
+    font-size: 3vw; }
+  .footer__link {
+    font-size: 2vw; } }
