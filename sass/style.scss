@@ -22,95 +22,91 @@ li{
 
 /*  HEADER  */
 
-header{
+.header{
     position: sticky;
     top: 0;
-}
-.header__navegacion{
-    display: flex;
+    &__navegacion{
+        display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     background: rgb(252,163,17);
     background: linear-gradient(180deg, rgba(252,163,17,1) 0%, rgba(231,150,15,0.9023984593837535) 100%);
-}
-
-.header__logo{
-    height: 50px;
-
-}
-.header__paginas{
-    margin: 12px 12px;
-    color: black;
-    text-decoration: none;
-    
-}
-
-.header__paginas:hover{
-    color: white;
-    transition:0.2s;
+    }
+    &__logo{
+        height: 50px;
+    }
+    &__paginas{
+        margin: 12px 12px;
+        color: black;
+        text-decoration: none;
+        &:hover{
+            color: white;
+            transition:0.2s;
+        }
+    }
 }
 
 
 /*  MAIN  */
-.principal__contenedor{
-    display: inline-block;
-    width: 100%;
-    height: 700px;
-    background-image:linear-gradient(
-        0deg,
-        rgba(250,250,250,0.5),
-        rgba(250,250,250,0.7)
-        )
-        , url(../recursos/streetwear-2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+.principal{
+    &__contenedor{
+        display: inline-block;
+        width: 100%;
+        height: 700px;
+        background-image:linear-gradient(
+            0deg,
+            rgba(250,250,250,0.5),
+            rgba(250,250,250,0.7)
+            )
+            , url(../recursos/streetwear-2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    &__centrartodo{
+        text-align: center;
+    }
+    &__boton{
+        font-size: 20px;
+        text-align: center;
+        padding: 5px 10px;
+        background: rgb(252,163,17);
+        background: linear-gradient(180deg, rgba(252,163,17,1) 0%, rgba(231,150,15,0.9023984593837535) 100%);
+        border: 1px solid #FCA311 ;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0,0.5);
+        &:hover{
+            background: rgb(20,33,61);
+            background: linear-gradient(180deg, rgba(20,33,61,1) 0%, rgba(11,21,42,1) 100%);
+            border: 1px solid #14213d;
+            color: #FCA311;
+            transition:0.2s;
+            cursor: pointer;
+        }
+    }
 }
 
-.principal__centrartodo{
-    text-align: center;
-}
-.principal__boton{
-    font-size: 20px;
-    text-align: center;
-    padding: 5px 10px;
-    background: rgb(252,163,17);
-    background: linear-gradient(180deg, rgba(252,163,17,1) 0%, rgba(231,150,15,0.9023984593837535) 100%);
-    border: 1px solid #FCA311 ;
-    border-radius: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0,0.5);
-}
-.principal__boton:hover{
-    background: rgb(20,33,61);
-    background: linear-gradient(180deg, rgba(20,33,61,1) 0%, rgba(11,21,42,1) 100%);
-    border: 1px solid #14213d;
-    color: #FCA311;
-    transition:0.2s;
-    cursor: pointer;
-}
 
 
 .secundaria{
     background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
-}
-.secundaria__contenedor{
-    display: inline-block;
-    margin: 10px;
-    vertical-align: top;
-    max-width: 50%;
-    text-align: center;
-}
-
-.secundaria__imagen{
-    display: inline-block;
-    width: 400px;
-    
-}
-
-.secundaria__texto{
-    display: inline;
+    &__contenedor{
+        display: inline-block;
+        margin: 10px;
+        vertical-align: top;
+        max-width: 50%;
+        text-align: center;
+    }
+    &__imagen{
+        display: inline-block;
+        width: 400px;
+        
+    }
+    &__texto{
+        display: inline;
+    }
 }
 /* le saco el margin para que tenga mas espacio la imagen con el texto
 en la imagen de la seccion de abajo en index (Bootstrap) */
@@ -128,96 +124,84 @@ la imagen de la section de abajo en index (Bootstrap) */
 
 /*  FOOTER  */
 
-footer{
+.footer{
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;
     background-color: #E5E5E5;
+    &__contenedor{
+        display: flex;
+    }
+    &__parrafo{
+        margin-bottom: 0;
+    }
+    &__logo{
+        height: 20px;
+        margin: 0 0.5rem;
+    }
+    &__link{
+        text-decoration: none;
+        color: black;
+        &:hover{
+            color: #14213d;
+        }
+    }
 }
 
-.footer__contenedor{
-    display: flex;
-}
-.footer__parrafo{
-    margin-bottom: 0;
-}
-
-.footer__logo{
-    height: 20px;
-    margin: 0 0.5rem;
-}
-.footer__link{
-    text-decoration: none;
-    color: black;
-}
-.footer__link:hover{
-    color: #14213d;
-}
 /* Pagina PRODUCTOS */
 
 /* se cambia imagen de fondo principal y tamaño*/
-
-.principal__contenedorproductos{
-    display: inline-block;
-    width: 100%;
-    height: 400px;
-    background-image: url(../recursos/ropa.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+.principal{
+    &__contenedorproductos{
+        display: inline-block;
+        width: 100%;
+        height: 400px;
+        background-image: url(../recursos/ropa.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    &__logo--internas{
+        height: 200px;
+        text-align: center;
+    }
 }
 
-.principal__logo--internas{
-    height: 200px;
-    text-align: center;
-}
 /* se cambia imagen de fondo principal y tamaño */
 
 .productos{
-    /*
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;*/
-
-
     width: 100%;
     margin: auto;
     background-color: #E5E5E5;
+    &__grid{
+        display: grid;
+        grid-template-areas: 'prod__uno prod__dos prod__tres'
+                            'prod__cuatro prod__cinco prod__seis';
+        justify-content: center;
+    }
 }
-
-.productos__grid{
-    display: grid;
-    grid-template-areas: 'prod__uno prod__dos prod__tres'
-                        'prod__cuatro prod__cinco prod__seis';
-    justify-content: center;
-}
-
 .prod{
-    /*display: inline-block;*/
-    /*width: 25%;*/
     margin: 12px;
     background-color: white;
     text-align: center;
     border: 1px solid #E5E5E5;
     border-radius: 5px;
-
     /* "overflow: hidden;" para que se vea el border radius en la parte superior */
     overflow: hidden;
     box-sizing: border-box;
-}
-.prod__uno{grid-area: prod__uno;}
-.prod__dos{grid-area: prod__dos;}
-.prod__tres{grid-area: prod__tres;}
-.prod__cuatro{grid-area: prod__cuatro;}
-.prod__cinco{grid-area: prod__cinco;}
-.prod__seis{grid-area: prod__seis;}
-
-.prod__titulo{
-    background-color: #FCA311;
-    background-position: center center;
-    background-size: cover;
-    padding: 6px 0;
-    margin-bottom: 0;
+    &__uno{grid-area: prod__uno;}
+    &__dos{grid-area: prod__dos;}
+    &__tres{grid-area: prod__tres;}
+    &__cuatro{grid-area: prod__cuatro;}
+    &__cinco{grid-area: prod__cinco;}
+    &__seis{grid-area: prod__seis;}
+    &__titulo{
+        background-color: #FCA311;
+        background-position: center center;
+        background-size: cover;
+        padding: 6px 0;
+        margin-bottom: 0;
+    }
 }
 
 .imgproducto{
@@ -234,47 +218,49 @@ footer{
     border: 1px solid #FCA311 ;
     border-radius: 5px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0,0.5);
+    &:hover{
+        color: #FCA311;
+        background-color: #14213d;
+        border: 1px solid #14213d;
+        transition:0.2s;
+        cursor: pointer;
+    }
 }
-
-.btn:hover{
-    color: #FCA311;
-    background-color: #14213d;
-    border: 1px solid #14213d;
-    transition:0.2s;
-    cursor: pointer;
-}
-
 
 /* SOBRE NOSOTROS */
-.principal__contenedornosotros{
-    display: inline-block;
-    width: 100%;
-    height: 400px;
-    background-image:linear-gradient(
-        0deg,
-        rgba(222,222,222,0.5),
-        rgba(222,222,222,0.5)
-        )
-        , url(../recursos/ropita.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+.principal{
+    &__contenedornosotros{
+        display: inline-block;
+        width: 100%;
+        height: 400px;
+        background-image:linear-gradient(
+            0deg,
+            rgba(222,222,222,0.5),
+            rgba(222,222,222,0.5)
+            )
+            , url(../recursos/ropita.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
 }
 
 /* INFORMACION*/
-.principal__contenedorinfo{
-    display: inline-block;
-    width: 100%;
-    height: 400px;
-    background-image: linear-gradient(
-        0deg,
-        rgba(222,222,222,0.5),
-        rgba(222,222,222,0.5)
-        )
-        , url(../recursos/fondo-info.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+.principal{
+    &__contenedorinfo{
+        display: inline-block;
+        width: 100%;
+        height: 400px;
+        background-image: linear-gradient(
+            0deg,
+            rgba(222,222,222,0.5),
+            rgba(222,222,222,0.5)
+            )
+            , url(../recursos/fondo-info.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
 }
 
 .info__grid{
@@ -314,7 +300,6 @@ footer{
     grid-area: texto__envios;
 }
 
-
 .img__envios{
     background-image: 
         url("../recursos/envios.jpg");
@@ -324,45 +309,57 @@ footer{
     height: 300px;
 }
 
-
 .margin__grid{
     margin: 12px;
 }
 
 
 /* CONTACTO */
-.principal__contenedorcontacto{
-    display: inline-block;
-    width: 100%;
-    height: 400px;
-    background-image:linear-gradient(
-        0deg,
-        rgba(250,250,250,0.3),
-        rgba(250,250,250,0.3)
-        )
-        , url(../recursos/ropa-contacto.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+.principal{
+    &__contenedorcontacto{
+        display: inline-block;
+        width: 100%;
+        height: 400px;
+        background-image:linear-gradient(
+            0deg,
+            rgba(250,250,250,0.3),
+            rgba(250,250,250,0.3)
+            )
+            , url(../recursos/ropa-contacto.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
 }
 .formulario{
     background-color: #E5E5E5;
     background-size: 100vw 100vh;
     padding: 12px;
     margin: 0;
-}
-.formulario__form{
-    width: 400px;
-    margin: auto;
-    background-color: white;
-    box-sizing: border-box;
-    padding: 12px;
-    border-radius: 5px;
+    &__form{
+        width: 400px;
+        margin: auto;
+        background-color: white;
+        box-sizing: border-box;
+        padding: 12px;
+        border-radius: 5px;
+    }
+    &__texto{
+        text-align: center;
+    }
+    &__btn{
+        background-color: #FCA311;
+        border: 1px solid #FCA311;
+        &:hover{
+            color: #FCA311;
+            background-color: #14213d;
+            border: 1px solid #14213d;
+            transition:0.2s;
+            cursor: pointer;
+        }
+    }
 }
 
-.formulario__texto{
-    text-align: center;
-}
 input,textarea{
     width: 100%;
     margin-bottom: 12px;
@@ -378,17 +375,8 @@ textarea{
     min-height: 100px;
     max-height: 100px;
 }
-.formulario__btn{
-    background-color: #FCA311;
-    border: 1px solid #FCA311 ;
-}
-.formulario__btn:hover{
-    color: #FCA311;
-    background-color: #14213d;
-    border: 1px solid #14213d;
-    transition:0.2s;
-    cursor: pointer;
-}
+
+
 
 
 
@@ -396,15 +384,16 @@ textarea{
 @media (max-width:1024px){
     /* index */
     /* HEADER */
-    header{
+    .header{
         position: static;
+        &__contenedorpaginas{
+            width: 100%;
+        }
+        &__navegacion{
+            flex-direction: column;
+        }
     }
-    .header__contenedorpaginas{
-        width: 100%;
-    }
-    .header__navegacion{
-        flex-direction: column;
-    }
+
     ul{
         display: flex;
         flex-direction: column;
@@ -420,38 +409,34 @@ textarea{
         align-items: center;
         height: auto;
         padding-bottom: 20px;
-    }
-    .secundaria__contenedor{
-        display: flex;
-        flex-direction: column;
-        margin: 12px;
-        max-width: 100%;
-    }
-    .secundaria__imagen{
-        box-sizing: border-box;
-        width: 100%;
+        &__contenedor{
+            display: flex;
+            flex-direction: column;
+            margin: 12px;
+            max-width: 100%;
+        }
+        &__imagen{
+            box-sizing: border-box;
+            width: 100%;
+        }
     }
     /* FOOTER */
-    footer{
+    .footer{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         font-size: 1rem;
+        &__contenedor--redes{
+            position: static;
+        }
+        &__parrafo_none{
+            display: none;
+        }
+        &__logo{
+            margin: 0 0.5rem;
+            width: auto;
+        }
     }
-    .footer__contenedor--redes{
-        position: static;
-    }
-
-    .footer__parrafo_none{
-        display: none;
-    }
-
-    .footer__logo{
-        margin: 0 0.5rem;
-        width: auto;
-    }
-
-
     /* productos */
     .productos{
         display: flex;
@@ -467,10 +452,12 @@ textarea{
     }
 }
 @media (max-width:451px){
-    .footer__parrafo{
-        font-size: 3vw;
-    }
-    .footer__link{
-        font-size: 2vw;
+    .footer{
+        &__parrafo{
+            font-size: 3vw;
+        }
+        &__link{
+            font-size: 2vw;
+        }
     }
 }
