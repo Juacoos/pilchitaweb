@@ -54,7 +54,6 @@ ul {
 li {
   display: inline-block; }
 
-/*  HEADER  */
 /*  MAIN  */
 .principal__contenedor {
   display: inline-block;
@@ -112,14 +111,13 @@ la imagen de la section de abajo en index (Bootstrap) */
   padding-right: 0;
   padding-left: 0; }
 
-/*  FOOTER  */
 /* Pagina PRODUCTOS */
 /* se cambia imagen de fondo principal y tamaño*/
 .principal__contenedorproductos {
   display: inline-block;
   width: 100%;
   height: 400px;
-  background-image: url(../recursos/ropa.jpg);
+  background-image: none, url(../recursos/ropa.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
