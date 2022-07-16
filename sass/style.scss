@@ -121,12 +121,16 @@ la imagen de la section de abajo en index (Bootstrap) */
 
 /* se cambia imagen de fondo principal y tamaño */
 
+//----
+/*A TENER EN CUENTA PARA PROXIMOS CAMBIOS AQUI 'grid' tercera columna */
+//----
 .productos{
     width: 100%;
     margin: auto;
-    background-color: #E5E5E5;
+    /* background-color: #E5E5E5; */
     &__grid{
         display: grid;
+        /* grid-template-columns:  1fr 1fr 1fr; */
         grid-template-areas: 'prod__uno prod__dos prod__tres'
                             'prod__cuatro prod__cinco prod__seis';
         justify-content: center;
@@ -141,6 +145,8 @@ la imagen de la section de abajo en index (Bootstrap) */
     /* "overflow: hidden;" para que se vea el border radius en la parte superior */
     overflow: hidden;
     box-sizing: border-box;
+    /*Sombra*/
+    box-shadow: 0px 0px 5px 1px #E5E5E5;
     &__uno{grid-area: prod__uno;}
     &__dos{grid-area: prod__dos;}
     &__tres{grid-area: prod__tres;}
@@ -272,7 +278,8 @@ la imagen de la section de abajo en index (Bootstrap) */
     }
 }
 .formulario{
-    background-color: #E5E5E5;
+    /* background-color: #E5E5E5; */
+    
     background-size: 100vw 100vh;
     padding: 12px;
     margin: 0;
@@ -283,6 +290,8 @@ la imagen de la section de abajo en index (Bootstrap) */
         box-sizing: border-box;
         padding: 12px;
         border-radius: 5px;
+        border: 1px solid #E5E5E5;
+        box-shadow: 0px 0px 5px 1px #E5E5E5;
     }
     &__texto{
         text-align: center;

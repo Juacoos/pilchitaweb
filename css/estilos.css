@@ -127,12 +127,14 @@ la imagen de la section de abajo en index (Bootstrap) */
   text-align: center; }
 
 /* se cambia imagen de fondo principal y tamaño */
+/*A TENER EN CUENTA PARA PROXIMOS CAMBIOS AQUI 'grid' tercera columna */
 .productos {
   width: 100%;
   margin: auto;
-  background-color: #E5E5E5; }
+  /* background-color: #E5E5E5; */ }
   .productos__grid {
     display: grid;
+    /* grid-template-columns:  1fr 1fr 1fr; */
     grid-template-areas: 'prod__uno prod__dos prod__tres' 'prod__cuatro prod__cinco prod__seis';
     justify-content: center; }
 
@@ -144,7 +146,9 @@ la imagen de la section de abajo en index (Bootstrap) */
   border-radius: 5px;
   /* "overflow: hidden;" para que se vea el border radius en la parte superior */
   overflow: hidden;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  /*Sombra*/
+  box-shadow: 0px 0px 5px 1px #E5E5E5; }
   .prod__uno {
     grid-area: prod__uno; }
   .prod__dos {
@@ -254,7 +258,7 @@ la imagen de la section de abajo en index (Bootstrap) */
   background-position: center center; }
 
 .formulario {
-  background-color: #E5E5E5;
+  /* background-color: #E5E5E5; */
   background-size: 100vw 100vh;
   padding: 12px;
   margin: 0; }
@@ -264,7 +268,9 @@ la imagen de la section de abajo en index (Bootstrap) */
     background-color: white;
     box-sizing: border-box;
     padding: 12px;
-    border-radius: 5px; }
+    border-radius: 5px;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0px 0px 5px 1px #E5E5E5; }
   .formulario__texto {
     text-align: center; }
   .formulario__btn {
