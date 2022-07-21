@@ -60,6 +60,7 @@ const agregarAlCarrito = (prodId) => {
     let productosSesionS = JSON.parse(sessionStorage.getItem("productosEnCarrito"));
     console.log(productosSesionS);
     console.log(`En tu carrito tenes los productos: ${productosSesionS.map((p) => p.nombre)}`); */
+    console.log(carrito);
 
 }
 
