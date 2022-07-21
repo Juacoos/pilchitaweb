@@ -33,53 +33,73 @@ for(let product of listaProductos){
     productoTarjeta.className = "prod";
     productoTarjeta.classList.add(`${product.idgrid}`);
     containerProd.append(productoTarjeta);
+
+
+    const botonCarrito = document.getElementById(`${product.idCarrito}`);
+    botonCarrito.addEventListener("click",() =>{
+        agregarAlCarrito(product.id);
+    })
+
+    const botonComprar = document.getElementById(`${product.idComprar}`);
+    botonComprar.addEventListener("click",() => {
+        alert(`Compraste el producto ${product.nombre} a $${product.precio} chelines`)
+    })
 }
-
-
-
 
 let carrito = [];
-let totalPrecio = [];
-const sumarCarrito = () => {
-}
-function btnComprar(){
-    alert("Compraste el producto");
-}
-function btnCarrito(){
-    alert("Agregaste el producto al carrito");
+let totalPrecioCarrito = [];
+const agregarAlCarrito = (prodId) => {
+    const prodAgregar = listaProductos.find((prod) => prod.id === prodId);
+    carrito.push(prodAgregar);
+    totalPrecioCarrito = carrito.reduce((acumulador,elementoLista) => acumulador + elementoLista.precio, 0);
+    /* console.log(carrito); */
+    alert(`Agregaste el producto ${prodAgregar.nombre} a $${prodAgregar.precio} chelines. El total del carrito es: $${totalPrecioCarrito} chelines`);
+    
+    /* //Agrego el carrito al SessionStorage y lo muestro por consola
+    sessionStorage.setItem("productosEnCarrito",JSON.stringify(carrito));
+    let productosSesionS = JSON.parse(sessionStorage.getItem("productosEnCarrito"));
+    console.log(productosSesionS);
+    console.log(`En tu carrito tenes los productos: ${productosSesionS.map((p) => p.nombre)}`); */
+
 }
 
-// Botones de comprar
-let comprar1 = document.getElementById("comprar1");
-let comprar2 = document.getElementById("comprar2");
-let comprar3 = document.getElementById("comprar3");
-let comprar4 = document.getElementById("comprar4");
-let comprar5 = document.getElementById("comprar5");
-let comprar6 = document.getElementById("comprar6");
-let comprar7 = document.getElementById("comprar7");
-let comprar8 = document.getElementById("comprar8");
-comprar1.addEventListener("click",btnComprar);
-comprar2.addEventListener("click",btnComprar);
-comprar3.addEventListener("click",btnComprar);
-comprar4.addEventListener("click",btnComprar); 
-comprar5.addEventListener("click",btnComprar);
-comprar6.addEventListener("click",btnComprar);
-comprar7.addEventListener("click",btnComprar); 
-comprar8.addEventListener("click",btnComprar);
-//botones de carrito
-let carrito1 = document.getElementById("carrito1");
-let carrito2 = document.getElementById("carrito2");
-let carrito3 = document.getElementById("carrito3");
-let carrito4 = document.getElementById("carrito4");
-let carrito5 = document.getElementById("carrito5");
-let carrito6 = document.getElementById("carrito6");
-let carrito7 = document.getElementById("carrito7");
-let carrito8 = document.getElementById("carrito8");
-carrito1.addEventListener("click",btnCarrito);
-carrito2.addEventListener("click",btnCarrito);
-carrito3.addEventListener("click",btnCarrito);
-carrito4.addEventListener("click",btnCarrito); 
-carrito5.addEventListener("click",btnCarrito);
-carrito6.addEventListener("click",btnCarrito);
-carrito7.addEventListener("click",btnCarrito); 
-carrito8.addEventListener("click",btnCarrito);
+
+const comprarProducto = (prodId) => {
+    prodComprar = listaProductos.find((prod) => prod.id === prodId);
+
+}
+
+
+//JSON.stringify(value)
+//JSON.parse(value)
+
+//
+//ELIMINAR ELEMENTOS "SPLICE"
+
+
+
+
+
+
+
+// find, map, filter
+
+// No tocar
+let containerUser = document.getElementById("us");
+let user;
+let userStorage = sessionStorage.getItem("usuario");
+if(userStorage){
+    user = userStorage;
+    /* let response = `Bienvenido ${user}`;
+    alert(response); */
+    let saludoTarjeta = document.createElement("h5");
+    saludoTarjeta.innerHTML = `Bienvenido ${user}`;
+    containerUser.append(saludoTarjeta);
+}else{
+    user = prompt("Ingrese su nombre");
+    sessionStorage.setItem("usuario", user);
+    let saludoTarjeta = document.createElement("h5");
+    saludoTarjeta.innerHTML = `Bienvenido ${user}`;
+    containerUser.append(saludoTarjeta);
+}
+//No tocar
