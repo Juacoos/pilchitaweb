@@ -48,27 +48,49 @@ for(let product of listaProductos){
 
 let carrito = [];
 let totalPrecioCarrito = [];
+let totalPrecioCarritoS = [];
 const agregarAlCarrito = (prodId) => {
+    /* Código original SIN localStorage */
     const prodAgregar = listaProductos.find((prod) => prod.id === prodId);
     carrito.push(prodAgregar);
     totalPrecioCarrito = carrito.reduce((acumulador,elementoLista) => acumulador + elementoLista.precio, 0);
-    /* console.log(carrito); */
     alert(`Agregaste el producto ${prodAgregar.nombre} a $${prodAgregar.precio} chelines. El total del carrito es: $${totalPrecioCarrito} chelines`);
     
-    /* //Agrego el carrito al SessionStorage y lo muestro por consola
-    sessionStorage.setItem("productosEnCarrito",JSON.stringify(carrito));
-    let productosSesionS = JSON.parse(sessionStorage.getItem("productosEnCarrito"));
-    console.log(productosSesionS);
-    console.log(`En tu carrito tenes los productos: ${productosSesionS.map((p) => p.nombre)}`); */
-    console.log(carrito);
-
+    //localStorage 
+    //guardo los productos del carrito en "carritoProductos" en localStorage
+    let carritoStorage = JSON.parse(localStorage.getItem("carritoProductos"));
+    localStorage.setItem("carritoProductos",JSON.stringify(carritoStorage.concat(carrito)));
+    
+    
+    //Acá hago el precio total del carrito directamente guardado en el localStorage
+    let totalPrecioCarritoS = carritoStorage.reduce((acumulador,elementoLista) => acumulador + elementoLista.precio, 0);
+    localStorage.setItem("precioCarrito",JSON.stringify(totalPrecioCarritoS));
+    //Muestro por consola cada producto agregado y también el total del carrito
+    console.log(`Agregaste el producto ${prodAgregar.nombre} a $${prodAgregar.precio} chelines. El total del carrito es: $${totalPrecioCarritoS} chelines`);
 }
 
+//Traigo a carritoStorage los elementos del carrito almacenados en localStorage para mostrar cuales quedaron almacenados
+//con su nombre
+let carritoStorage = JSON.parse(localStorage.getItem("carritoProductos")); 
+nombresCarritoStorage = [];
+carritoStorage.map(el => {
+    nombresCarritoStorage.push(el.nombre)
+})
+
+//Traigo a precioStorage el precio total del carrito almacenado en localStorage para mostrarlo
+let precioStorage = JSON.parse(localStorage.getItem("precioCarrito"));
+
+//Con mostrarCarritoStorage se muestra el nombre de los productos del carrito y el total  cuando se recargue la página
+const mostrarCarritoStorage = () => {
+    console.log("Productos en el carrito(localStorage anterior): " + nombresCarritoStorage.join(", "));
+    console.log(`Precio del carrito(localStorage anterior): $${precioStorage} chelines`);
+}
+mostrarCarritoStorage();
 
 const comprarProducto = (prodId) => {
     prodComprar = listaProductos.find((prod) => prod.id === prodId);
-
 }
+
 
 
 //JSON.stringify(value)
