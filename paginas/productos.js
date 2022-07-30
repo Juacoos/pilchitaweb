@@ -42,11 +42,27 @@ for(let product of listaProductos){
 
     const botonComprar = document.getElementById(`${product.idComprar}`);
     botonComprar.addEventListener("click",() => {
-        alert(`Compraste el producto ${product.nombre} a $${product.precio} chelines`)
+        //alert(`Compraste el producto ${product.nombre} a $${product.precio} chelines`)
+        Swal.fire({
+            title: `¿Comprar ${product.nombre}?`,
+            icon: "success",
+            showCancelButton: true,
+            confirmButtonText: "Confirmar",
+            cancelButtonText: "Cancelar",
+            confirmButtonColor:'#FCA311',
+            width: 400,
+            padding: '3em',
+            color: '#FCA311'
+        }).then((result) => {
+            if (result.isConfirmed) {
+            Swal.fire('Comprado', '', 'success')
+            }
+        })
     })
 }
 
 let carrito = [];
+
 let totalPrecioCarrito = [];
 let totalPrecioCarritoS = [];
 const agregarAlCarrito = (prodId) => {
@@ -54,9 +70,10 @@ const agregarAlCarrito = (prodId) => {
     const prodAgregar = listaProductos.find((prod) => prod.id === prodId);
     carrito.push(prodAgregar);
     totalPrecioCarrito = carrito.reduce((acumulador,elementoLista) => acumulador + elementoLista.precio, 0);
-    alert(`Agregaste el producto ${prodAgregar.nombre} a $${prodAgregar.precio} chelines. El total del carrito es: $${totalPrecioCarrito} chelines`);
-    
-    //localStorage 
+    /* alert(`Agregaste el producto ${prodAgregar.nombre} a $${prodAgregar.precio} chelines. El total del carrito es: $${totalPrecioCarrito} chelines`); */
+
+
+    /* //localStorage 
     //guardo los productos del carrito en "carritoProductos" en localStorage
     let carritoStorage = JSON.parse(localStorage.getItem("carritoProductos"));
     localStorage.setItem("carritoProductos",JSON.stringify(carritoStorage.concat(carrito)));
@@ -66,24 +83,44 @@ const agregarAlCarrito = (prodId) => {
     let totalPrecioCarritoS = carritoStorage.reduce((acumulador,elementoLista) => acumulador + elementoLista.precio, 0);
     localStorage.setItem("precioCarrito",JSON.stringify(totalPrecioCarritoS));
     //Muestro por consola cada producto agregado y también el total del carrito
-    console.log(`Agregaste el producto ${prodAgregar.nombre} a $${prodAgregar.precio} chelines. El total del carrito es: $${totalPrecioCarritoS} chelines`);
+    console.log(`Agregaste el producto ${prodAgregar.nombre} a $${prodAgregar.precio} chelines. El total del carrito es: $${totalPrecioCarritoS} chelines`); */
+    Swal.fire({
+        title: `Agregaste ${prodAgregar.nombre} al carrito!`,
+        text: `El total del carrito es $${totalPrecioCarrito} chelines`,
+        icon: "success",
+        showCancelButton: true,
+        showDenyButton: true,
+        confirmButtonText: "Ver carrito",
+        denyButtonText: "Cancelar",
+        cancelButtonText: "Salir",
+        confirmButtonColor:'#FCA311',
+        width: 400,
+        padding: '3em',
+        color: '#FCA311'
+    }).then((result) => {
+        if (result.isConfirmed) {
+        Swal.fire('Yendo al carrito', '', 'success')
+        } else if (result.isDenied) {
+        Swal.fire('Producto eliminado del carrito', '', 'warning')
+        }
+    })
 }
 
 //Traigo a carritoStorage los elementos del carrito almacenados en localStorage para mostrar cuales quedaron almacenados
 //con su nombre
-let carritoStorage = JSON.parse(localStorage.getItem("carritoProductos")); 
-nombresCarritoStorage = [];
+/* carritoStorage = JSON.parse(localStorage.getItem("carritoProductos"));
+let nombresCarritoStorage = [];
 carritoStorage.map(el => {
     nombresCarritoStorage.push(el.nombre)
-})
+}) */
 
 //Traigo a precioStorage el precio total del carrito almacenado en localStorage para mostrarlo
 let precioStorage = JSON.parse(localStorage.getItem("precioCarrito"));
 
 //Con mostrarCarritoStorage se muestra el nombre de los productos del carrito y el total  cuando se recargue la página
 const mostrarCarritoStorage = () => {
-    console.log("Productos en el carrito(localStorage anterior): " + nombresCarritoStorage.join(", "));
-    console.log(`Precio del carrito(localStorage anterior): $${precioStorage} chelines`);
+    /* console.log("Productos en el carrito: " + nombresCarritoStorage.join(", ")); */
+    console.log(`Precio del carrito: $${precioStorage} chelines`);
 }
 mostrarCarritoStorage();
 
@@ -91,18 +128,15 @@ const comprarProducto = (prodId) => {
     prodComprar = listaProductos.find((prod) => prod.id === prodId);
 }
 
-
+/* const eliminarProducto = (prodId) => {
+    prodComprar = listaProductos.find((prod) => prod.id === prodId);
+} */
 
 //JSON.stringify(value)
 //JSON.parse(value)
 
 //
 //ELIMINAR ELEMENTOS "SPLICE"
-
-
-
-
-
 
 
 // find, map, filter
@@ -113,8 +147,8 @@ let user;
 let userStorage = sessionStorage.getItem("usuario");
 if(userStorage){
     user = userStorage;
-    /* let response = `Bienvenido ${user}`;
-    alert(response); */
+    /* let response = `Bienvenido ${user}`; */
+    /* alert(response); */
     let saludoTarjeta = document.createElement("h5");
     saludoTarjeta.innerHTML = `Bienvenido ${user}`;
     containerUser.append(saludoTarjeta);
