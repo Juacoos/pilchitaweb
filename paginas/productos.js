@@ -1,5 +1,5 @@
 class Producto{
-    constructor(id,idgrid,idCarrito,idComprar,nombre,img,precio){
+    constructor(id,idgrid,idCarrito,idComprar,nombre,img,precio,carritoImg){
         this.id = id,
         this.idCarrito = idCarrito,
         this.idComprar = idComprar,
@@ -7,19 +7,20 @@ class Producto{
         this.nombre = nombre,
         this.img = img,
         this.precio = precio
+        this.carritoImg = carritoImg
     }
 }
 
 const listaProductos = [];
 
-listaProductos.push(new Producto(1,"prod__uno","carrito1","comprar1","Jean de Mujer",`<img src="../recursos/jean-mujer.jpg" alt="jean de mujer" class="imgproducto">`,700));
-listaProductos.push(new Producto(2,"prod_dos","carrito2","comprar2","Jean de Hombre",`<img src="../recursos/jean-hombre.jpg" alt="jean de hombre" class="imgproducto">`,800));
-listaProductos.push(new Producto(3,"prod__tres","carrito3","comprar3","Camisa Negra",`<img src="../recursos/camisa-negra.jpg" alt="camisa negra" class="imgproducto">`,350));
-listaProductos.push(new Producto(4,"prod__cuatro","carrito4","comprar4","Campera Marron",`<img src="../recursos/campera-marron.jpg" alt="campera marron" class="imgproducto">`,1100));
-listaProductos.push(new Producto(5,"prod__cinco","carrito5","comprar5","Outfit Nashe",`<img src="../recursos/outfit-manso.jpg" alt="outfit fachero" class="imgproducto">`,1500));
-listaProductos.push(new Producto(6,"prod__seis","carrito6","comprar6","Remera Blanca",`<img src="../recursos/remera-blanca.jpg" alt="remera blanca" class="imgproducto">`,250)); 
-listaProductos.push(new Producto(7,"prod__siete","carrito7","comprar7","Remera Blanca",`<img src="../recursos/remera-blanca.jpg" alt="remera blanca" class="imgproducto">`,250)); 
-listaProductos.push(new Producto(8,"prod__ocho","carrito8","comprar8","Remera Blanca",`<img src="../recursos/jean-hombre.jpg" alt="remera blanca" class="imgproducto">`,250)); 
+listaProductos.push(new Producto(1,"prod__uno","carrito1","comprar1","Jean de Mujer",`<img src="../recursos/jean-mujer.jpg" alt="jean de mujer" class="imgproducto">`,700,"../recursos/jean-mujer.jpg"));
+listaProductos.push(new Producto(2,"prod_dos","carrito2","comprar2","Jean de Hombre",`<img src="../recursos/jean-hombre.jpg" alt="jean de hombre" class="imgproducto">`,800,"../recursos/jean-hombre.jpg"));
+listaProductos.push(new Producto(3,"prod__tres","carrito3","comprar3","Camisa Negra",`<img src="../recursos/camisa-negra.jpg" alt="camisa negra" class="imgproducto">`,350,"../recursos/camisa-negra.jpg"));
+listaProductos.push(new Producto(4,"prod__cuatro","carrito4","comprar4","Campera Marron",`<img src="../recursos/campera-marron.jpg" alt="campera marron" class="imgproducto">`,1100,"../recursos/campera-marron.jpg"));
+listaProductos.push(new Producto(5,"prod__cinco","carrito5","comprar5","Outfit Nashe",`<img src="../recursos/outfit-manso.jpg" alt="outfit fachero" class="imgproducto">`,1500,"../recursos/outfit-manso.jpg"));
+listaProductos.push(new Producto(6,"prod__seis","carrito6","comprar6","Remera Blanca",`<img src="../recursos/remera-blanca.jpg" alt="remera blanca" class="imgproducto">`,250,"../recursos/remera-blanca.jpg")); 
+listaProductos.push(new Producto(7,"prod__siete","carrito7","comprar7","Remera Blanca",`<img src="../recursos/remera-blanca.jpg" alt="remera blanca" class="imgproducto">`,250,"../recursos/remera-blanca.jpg")); 
+listaProductos.push(new Producto(8,"prod__ocho","carrito8","comprar8","Remera Blanca",`<img src="../recursos/jean-hombre.jpg" alt="remera blanca" class="imgproducto">`,250,"../recursos/jean-hombre.jpg")); 
 
 
 containerProd = document.getElementById("prod");
@@ -175,15 +176,16 @@ const actualizarCarrito = () => {
     carritoContenedor.innerHTML = "";
 
     carrito.forEach((prod) =>{
-        const div = document.createElement('div');
-        div.className = ('prod');
-        div.innerHTML = `<p class="prod__titulo">${prod.nombre}</p>
-        ${prod.img}
-        <p>Precio: $ ${prod.precio} chelines</p>
-        <p>Cantidad <span id="cantidad">${prod.nombre}</span></p>
-        <button class="btn" id="${prod.idComprar}">Comprar</button>
-        <button class="btn" onclick="eliminarDelCarrito(${prod.id})">Eliminar</button`
-        carritoContenedor.appendChild(div);
+        const tr = document.createElement('tr');
+        tr.className = ('trprop');
+        tr.innerHTML = `
+        <td class="tdprop"><img src="${prod.carritoImg}" class="imgcarrito"></td>
+        <td class="tdprop">${prod.nombre}</td>
+        <td class="tdprop">$${prod.precio}</td>
+        <td class="tdprop"><button class="btn" id="${prod.idComprar}">Comprar</button></td>
+        `
+        
+        carritoContenedor.appendChild(tr);
     
         localStorage.setItem('carrito',JSON.stringify(carrito))
     });
