@@ -4,10 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
     <title>Document</title>
 </head>
 <body>
+    <header class="header">
+        <nav class="header__navegacion">
+            <div class="header__contenedorlogo">
+                <a href="../index.html">
+                    <img src="../recursos/logo2.png" alt="logo" class="header__logo">
+                </a>
+            </div>
+            <div id="us">
+                
+            </div>
+            <div class="header__contenedorpaginas"></div>
+                <ul>
+                    <li><a href="../index.html" class="header__paginas">Inicio</a></li>
+                    <li><a href="productos.html" class="header__paginas">Productos</a></li>
+                    <li><a href="sobre-nosotros.html" class="header__paginas">Sobre Nosotros</a></li>
+                    <li><a href="info.html" class="header__paginas">+ Info</a></li>
+                    <li><a href="contacto.html" class="header__paginas">Contacto</a></li>
+                    <li class="submenu">
+                        <img class="carrito" src="../recursos/carrito.png" alt="" srcset="">
+                        <div id="carrito">
+                            <!-- <button id="boton-vaciar" class="btn">Vaciar Carrillo</button> -->
+                            <table class="tamañocarrito">
+                                
+                                <thead>
+                                    <tr>
+                                        <!-- <th class="propprod">Imagen</th>
+                                        <th class="propprod">Producto</th>
+                                        <th class="propprod">Precio</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody id="carrito-contenedor">
+                                    <!-- <tr>
+                                        <td>
+                                            <img src="../recursos/jean-hombre.jpg" alt="jean" width="100">
+                                        </td>
+                                        <td>Jean Hombre</td>
+                                        <td>15peso</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="../recursos/jean-hombre.jpg" alt="jean" width="100">
+                                        </td>
+                                        <td>Jean Hombre</td>
+                                        <td>15peso</td>
+                                        <td><a href="#" class="borrar-platillo"></a></td>
+                                    </tr> -->
+                                </tbody>
+                                
+                            </table>
+                            <button id="boton-vaciar" class="btn" style="display: block;">Vaciar Carrillo</button>
+                            <span id="contador-carrito">0</span>
+                            <span id="total-carrito">0</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section id="prod" class="productos productos__grid">
     <div class="container" id="container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="prueba.js"></script>
 </body>
