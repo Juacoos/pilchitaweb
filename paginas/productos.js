@@ -27,16 +27,19 @@ const obtenerProductos = async () =>{
             Swal.fire({
                 title: `¿Comprar ${product.nombre}?`,
                 icon: "success",
-                showCancelButton: true,
+                showCancelButton: false,
+                showDenyButton: true,
                 confirmButtonText: "Confirmar",
-                cancelButtonText: "Cancelar",
+                denyButtonText: "Cancelar",
                 confirmButtonColor:'#FCA311',
                 width: 400,
                 padding: '3em',
                 color: '#FCA311'
             }).then((result) => {
                 if (result.isConfirmed) {
-                Swal.fire('Comprado', '', 'success')
+                    Swal.fire('Comprado', '', 'success')
+                }else if (result.isDenied) {
+                    Swal.fire(`Cancelada la compra de ${product.nombre}`, '', 'warning')
                 }
             })
         }) //botonComprar
@@ -44,33 +47,31 @@ const obtenerProductos = async () =>{
 
     const agregarAlCarrito = (prodId) => {
         const prodAgregar = data.find((prod) => prod.id === prodId);
-        carrito.push(prodAgregar);
-    
-        
-        totalPrecioCarrito = carrito.reduce((acumulador,elementoLista) => acumulador + elementoLista.precio, 0);
-        
         // Alerta del carrito
         Swal.fire({
-            title: `Agregaste ${prodAgregar.nombre} al carrito!`,
-            text: `El total del carrito es $${totalPrecioCarrito} chelines`,
+            title: `¿Agregar ${prodAgregar.nombre} al carrito?`,
             icon: "success",
             showCancelButton: true,
             showDenyButton: true,
-            confirmButtonText: "Ver carrito",
+            confirmButtonText: "Aceptar",
             denyButtonText: "Cancelar",
-            cancelButtonText: "Salir",
+            showCancelButton: false,
+            /* cancelButtonText: "Salir",  */
             confirmButtonColor:'#FCA311',
             width: 400,
             padding: '3em',
             color: '#FCA311'
         }).then((result) => {
             if (result.isConfirmed) {
-            Swal.fire('Yendo al carrito', '', 'success')
+                carrito.push(prodAgregar);
+                totalPrecioCarrito = carrito.reduce((acumulador,elementoLista) => acumulador + elementoLista.precio, 0);
+                actualizarCarrito();
+                Swal.fire({title:`Agregaste ${prodAgregar.nombre}`,text:`El total del carrito es de $${totalPrecioCarrito} chelines`,icon: "success"})
             } else if (result.isDenied) {
-            Swal.fire('Producto eliminado del carrito', '', 'warning')
+                Swal.fire(`Cancelado el agregado de ${prodAgregar.nombre}`, '', 'warning')
             }
         })
-        actualizarCarrito();
+        
     }
 
 } //obtenerProductos
@@ -78,11 +79,7 @@ const obtenerProductos = async () =>{
 obtenerProductos();
 
 
-
 let carrito = [];
-
-
-
 
 
 document.addEventListener("DOMContentLoaded", () =>{
@@ -91,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () =>{
         actualizarCarrito();
     }
 })
-
 
 let totalPrecioCarrito = [];
 let totalPrecioCarritoS = [];
@@ -106,11 +102,9 @@ const eliminarDelCarrito = (prodId) => {
     actualizarCarrito();
 }
 
-
 const comprarProducto = (prodId) => {
     prodComprar = data.find((prod) => prod.id === prodId);
 }
-
 
 const carritoContenedor = document.getElementById("carrito-contenedor");
 
@@ -124,7 +118,6 @@ const totalCarrito = document.getElementById("total-carrito");
 
 const actualizarCarrito = () => {
     carritoContenedor.innerHTML = "";
-
     carrito.forEach((prod) =>{
         const tr = document.createElement('tr');
         tr.className = ('trprop');
@@ -140,6 +133,7 @@ const actualizarCarrito = () => {
         localStorage.setItem('carrito',JSON.stringify(carrito))
     });
     contadorCarrito.innerText = `Cantidad: ${carrito.length}`;
+    carrito.length == 0 ? totalPrecioCarrito = 0 : totalPrecioCarrito; // Para que quede en 0 el precio cuando se vacie
     totalCarrito.innerText = `Total: $${totalPrecioCarrito}`;
     localStorage.setItem('carrito',JSON.stringify(carrito))
 }
