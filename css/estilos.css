@@ -124,12 +124,13 @@ la imagen de la section de abajo en index (Bootstrap) */
   position: absolute;
   right: 0;
   top: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
   z-index: 1;
   background: white;
   padding: 20px;
   border: 1px solid #E5E5E5;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px 1px #E5E5E5; }
+  border-radius: 5px; }
 
 .tamañocarrito {
   width: 500px; }
@@ -137,15 +138,19 @@ la imagen de la section de abajo en index (Bootstrap) */
 .propprod {
   padding: 10px; }
 
+table {
+  border-collapse: separate;
+  border-spacing: 10px; }
+
 .trprop {
   padding: 16px;
-  gap: 10px;
   border: 1px solid #E5E5E5;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px 1px #E5E5E5; }
+  box-shadow: 0px 0px 5px 1px #E5E5E5;
+  overflow: hidden; }
 
 .tdprop {
-  padding: 10px; }
+  overflow: hidden; }
 
 /* se cambia imagen de fondo principal y tamaño*/
 .principal__contenedorproductos {
@@ -165,7 +170,8 @@ la imagen de la section de abajo en index (Bootstrap) */
   width: 1.5em; }
 
 .imgcarrito {
-  width: 100px; }
+  width: 100px;
+  border-radius: 5px 0 0 5px; }
 
 /* se cambia imagen de fondo principal y tamaño */
 /*A TENER EN CUENTA PARA PROXIMOS CAMBIOS AQUI 'grid' tercera columna */
